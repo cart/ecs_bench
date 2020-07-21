@@ -1,0 +1,30 @@
+[package]
+name = "ecs_bench"
+version = "0.1.0"
+authors = ["Lukas Schmierer <lukas.schmierer@lschmierer.de>"]
+edition = "2018"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = "0.3"
+rayon = "0.8"
+specs = "0.16"
+froggy = "0.4.4"
+constellation = "0.2"
+tiny_ecs = "0.19"
+legion = "0.2.4"
+legion_experimental = { path = "../legion_experiment", package = "legion" }
+shipyard = "0.4.1"
+bevy_ecs = { path = "../bevy/crates/bevy_ecs" }
+rand = "0.7.3"
+fnv = "1.0.6"
+hashbrown = { version = "0.8.0", default-features = false, features = ["ahash", "inline-more"] }
+
+[dev-dependencies.hecs]
+version = "0.2.12"
+features = ["macros"]
+
+[[bench]]
+name = "ecs_benches"
+harness = false
